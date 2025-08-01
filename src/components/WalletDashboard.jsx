@@ -34,7 +34,7 @@ const WalletDashboard = () => {
   const fetchWallet = async () => {
     setLoading(true);
     try {
-      const res = await fetch('https://zentra-tzml.onrender.com:3000/api/wallet', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/wallet', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error('Failed to fetch wallet');
