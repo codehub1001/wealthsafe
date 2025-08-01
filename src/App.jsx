@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // make sure this import exists
+import 'react-toastify/dist/ReactToastify.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Carousel from './components/Carousel';
+import CoinSlider from './components/CoinSlider';
+import WhatWeOffer from './components/WhatWeOffer';
+import Plans from './components/Plans';
+import WhyChooseUs from './components/WhyChooseUs';
+import Testimonials from './components/Testimonial';
+import Loader from './components/Loader';
 
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import CoinSlider from './components/CoinSlider';
-import WhatWeOffer from './components/WhatWeOffer';
-import Plans from './components/Plans';
-import WhyChooseUs from './components/WhyChooseUs';
 import UserDashboard from './pages/UserDashboard';
-import Testimonials from './components/Testimonial';
 import AdminDashboard from './pages/AdminDashboard';
 import DepositForm from './components/DepositForm';
 import ConfirmPayment from './components/ConfirmPayment';
@@ -28,9 +29,25 @@ import ForgotPassword from './components/ForgotPassword';
 
 const AppLayout = () => {
   const location = useLocation();
-  const hideLayoutRoutes = ['/userdashboard', '/admindashboard', '/deposit','/withdraw', '/invest' , '/confirmpayment' ];
+  const [loading, setLoading] = useState(true);
 
+  const hideLayoutRoutes = [
+    '/userdashboard',
+    '/admindashboard',
+    '/deposit',
+    '/withdraw',
+    '/invest',
+    '/confirmpayment',
+  ];
   const hideLayout = hideLayoutRoutes.includes(location.pathname);
+
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timeout);
+  }, [location.pathname]); // <-- triggers on every route change
+
+  if (loading) return <Loader />;
 
   return (
     <>
@@ -55,21 +72,27 @@ const AppLayout = () => {
         <Route path="/plans" element={<Plans />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/withdraw" element={<WithdrawalForm />} />
         <Route path="/deposit" element={<DepositForm />} />
-        <Route path="/invest" element={<InvestForm/>} />
-        <Route path="/investment" element={<InvestmentPlan/>} />
+        <Route path="/invest" element={<InvestForm />} />
+        <Route path="/investment" element={<InvestmentPlan />} />
         <Route path="/confirmpayment" element={<ConfirmPayment />} />
       </Routes>
 
       {!hideLayout && <Footer />}
 
-      {/* 🔔 Toast notifications */}
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} pauseOnFocusLoss={false} pauseOnHover theme="dark" />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        pauseOnFocusLoss={false}
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };
