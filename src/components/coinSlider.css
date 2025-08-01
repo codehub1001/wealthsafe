@@ -1,0 +1,12 @@
+@keyframes scrollTicker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.coin-slider-track {
+  animation: scrollTicker 25s linear infinite;
+}
