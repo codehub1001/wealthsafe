@@ -11,7 +11,7 @@ const ForgotPassword = () => {
 
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/api/forgot-password', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/forgot-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

@@ -14,7 +14,7 @@ const InvestForm = () => {
 
   const fetchPlans = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/investment/plans', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/investment/plans', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -33,7 +33,7 @@ const InvestForm = () => {
 
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/api/investment/invest', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/investment/invest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

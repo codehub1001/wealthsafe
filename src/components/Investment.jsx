@@ -15,7 +15,7 @@ export default function InvestmentDashboard() {
 
   const fetchPlans = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/investment/plans');
+      const res = await fetch('https://zentra-tzml.onrender.com/api/investment/plans');
       const data = await res.json();
       setPlans(data);
     } catch {
@@ -25,7 +25,7 @@ export default function InvestmentDashboard() {
 
   const fetchUserInvestments = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/investment/my-investments', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/investment/my-investments', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -50,7 +50,7 @@ export default function InvestmentDashboard() {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/investment/invest', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/investment/invest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

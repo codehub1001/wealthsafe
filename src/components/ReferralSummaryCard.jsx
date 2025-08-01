@@ -10,7 +10,7 @@ const ReferralSummaryCard = () => {
   useEffect(() => {
     const fetchReferralSummary = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/referrals', {
+        const res = await fetch('https://zentra-tzml.onrender.com/api/referrals', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
