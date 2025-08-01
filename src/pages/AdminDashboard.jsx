@@ -26,7 +26,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/admin/users', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/admin/users', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
 
   const fetchWallets = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/admin/wallets', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/admin/wallets', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
 
   const fetchPendingDeposits = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/admin/pending-deposits', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/admin/pending-deposits', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -62,7 +62,7 @@ const AdminDashboard = () => {
 
   const fetchPendingWithdrawals = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/admin/pending-withdrawals', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/admin/pending-withdrawals', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -74,7 +74,7 @@ const AdminDashboard = () => {
 
   const toggleFreeze = async (userId, currentStatus) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/admin/wallets/${userId}/freeze`, {
+      const res = await fetch(`https://zentra-tzml.onrender.com/api/admin/wallets/${userId}/freeze`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ const AdminDashboard = () => {
     const amount = amounts[walletId];
     if (!amount || isNaN(amount) || amount <= 0) return toast.error('Invalid amount');
     try {
-      const res = await fetch('http://localhost:3000/api/admin/topup', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/admin/topup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ const AdminDashboard = () => {
     const amount = debitAmounts[walletId];
     if (!amount || isNaN(amount) || amount <= 0) return toast.error('Invalid amount');
     try {
-      const res = await fetch('http://localhost:3000/api/admin/wallets/debit', {
+      const res = await fetch('https://zentra-tzml.onrender.com/api/admin/wallets/debit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ const AdminDashboard = () => {
   };
 
   const handleApproval = async (type, id, action) => {
-    const endpoint = `http://localhost:3000/api/admin/${action}-${type}/${id}`;
+    const endpoint = `https://zentra-tzml.onrender.com/api/admin/${action}-${type}/${id}`;
     if (!window.confirm(`${action} this ${type}?`)) return;
     setApprovingId(id);
     try {
@@ -180,7 +180,7 @@ const AdminDashboard = () => {
   const handleDeleteUser = async (id) => {
     if (!window.confirm('Delete this user?')) return;
     try {
-      await fetch(`http://localhost:3000/api/admin/users/${id}`, {
+      await fetch(`https://zentra-tzml.onrender.com/api/admin/users/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
