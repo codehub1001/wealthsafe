@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './CoinSlider.css'; // For animation
+import './coinSlider.css'; // For animation
 
 const CoinSlider = () => {
   const [coins, setCoins] = useState([]);
