@@ -20,7 +20,7 @@ import Testimonials from './components/Testimonial';
 import AdminDashboard from './pages/AdminDashboard';
 import DepositForm from './components/DepositForm';
 import ConfirmPayment from './components/ConfirmPayment';
-import InvestForm from './components/Investform';
+import InvestForm from './components/InvestForm';
 import WithdrawalForm from './components/WithdrawalForm';
 import InvestmentPlan from './components/InvestmentPlan';
 import ResetPassword from './components/ResetPassword';
