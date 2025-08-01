@@ -18,24 +18,31 @@ const Header = () => {
   const toggleNav = () => setNavOpen(!navOpen);
 
   return (
-    <header className="bg-white/90 backdrop-blur-md text-blue-900 shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <header className="bg-white/90 backdrop-blur-lg text-blue-900 shadow-md sticky top-0 z-50 transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-blue-700 tracking-tight hover:text-blue-900 transition">
-          zentraVault
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src="/img/zentralogo.png"
+            alt="Zentra Vault"
+            className="w-14 h-14 object-contain transition-transform group-hover:scale-110 duration-300"
+          />
+          <span className="text-2xl font-extrabold text-blue-800 tracking-wide group-hover:text-blue-900 transition-all">
+
+          </span>
         </Link>
 
+
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6 animate-fade-in">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.to}
               className={({ isActive }) =>
-                `transition-all duration-200 flex items-center text-sm font-medium gap-1 border-b-2 ${
-                  isActive
-                    ? 'border-blue-600 text-blue-700'
-                    : 'border-transparent text-blue-900 hover:border-blue-400 hover:text-blue-500'
+                `transition-all duration-200 flex items-center text-sm font-medium gap-1 border-b-2 ${isActive
+                  ? 'border-blue-600 text-blue-700'
+                  : 'border-transparent text-blue-900 hover:border-blue-400 hover:text-blue-500'
                 }`
               }
             >
@@ -46,7 +53,7 @@ const Header = () => {
 
           <Link
             to="/login"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl text-sm font-semibold shadow-sm hover:bg-blue-500 transition-all duration-200"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl text-sm font-semibold shadow-md hover:bg-blue-500 transition-all duration-200"
           >
             <FiLogIn /> Login
           </Link>
@@ -56,6 +63,7 @@ const Header = () => {
         <button
           className="md:hidden text-2xl text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded"
           onClick={toggleNav}
+          aria-label="Toggle menu"
         >
           {navOpen ? <FiX /> : <FiMenu />}
         </button>
@@ -63,18 +71,17 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {navOpen && (
-        <div className="md:hidden bg-blue-50 px-6 py-6 space-y-5 rounded-b-2xl shadow-md">
+        <div className="md:hidden bg-blue-50 px-6 py-6 space-y-5 rounded-b-2xl shadow-inner animate-slide-down">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.to}
               onClick={toggleNav}
               className={({ isActive }) =>
-                `block text-base flex items-center gap-2 rounded-md px-2 py-2 ${
-                  isActive
-                    ? 'bg-blue-100 text-blue-700 font-semibold'
-                    : 'text-blue-900 hover:bg-blue-100 hover:text-blue-600'
-                }`
+                `block text-base flex items-center gap-2 rounded-md px-2 py-2 ${isActive
+                  ? 'bg-blue-100 text-blue-700 font-semibold'
+                  : 'text-blue-900 hover:bg-blue-100 hover:text-blue-600'
+                } transition duration-200`
               }
             >
               {link.icon}
