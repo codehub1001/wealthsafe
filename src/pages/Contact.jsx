@@ -37,7 +37,7 @@ const ContactUs = () => {
           Get in Touch
         </h2>
         <p className="text-center text-gray-300 max-w-2xl mx-auto mb-12">
-          We're here to answer your questions about crypto investing, account setup, or anything else.
+          We're here to answer your questions about crypto investing, account setup, or anything else
         </p>
 
         <div className="grid md:grid-cols-2 gap-10">
