@@ -5,9 +5,9 @@ import { FaBitcoin, FaEthereum, FaRegCopy } from 'react-icons/fa';
 import { SiLitecoin } from 'react-icons/si';
 
 const walletAddresses = {
-  BTC: 'bc1qyourbtcwalletaddresshere',
-  ETH: '0xyourethwalletaddresshere',
-  LTC: 'ltcyourltcwalletaddresshere',
+  BTC: 'bc1q2tx3npt7v6csrvsxf74cq66q2tt57z88cenqkj',
+  ETH: '0x1E8c5260B39069A36F5588f928cA2a0CfC0D118e',
+  LTC: 'LSUjdeBaXwxaMq3462Svd1FZDmbzvnnjFx',
 };
 
 const coinIcons = {
