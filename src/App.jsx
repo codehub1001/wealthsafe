@@ -12,7 +12,7 @@ import Plans from './components/Plans';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonial';
 import Loader from './components/Loader';
-import TranslateBar from './components/TranslateBar';
+// import TranslateBar from './components/TranslateBar';
 
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -53,7 +53,7 @@ const AppLayout = () => {
   return (
     <>
       {/* Show TranslateBar on all pages */}
-      <TranslateBar />
+      {/* <TranslateBar /> */}
 
       {/* Conditionally show Header */}
       {!hideLayout && <Header />}
