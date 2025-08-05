@@ -27,6 +27,7 @@ import WithdrawalForm from './components/WithdrawalForm';
 import InvestmentPlan from './components/InvestmentPlan';
 import ResetPassword from './components/ResetPassword';
 import ForgotPassword from './components/ForgotPassword';
+import TawkToWidget from './components/TawkToWidget';
 
 const AppLayout = () => {
   const location = useLocation();
@@ -53,12 +54,11 @@ const AppLayout = () => {
   return (
     <>
       {/* Show TranslateBar on all pages */}
-      {/* <TranslateBar /> */}
-
+      <TawkToWidget/>
       {/* Conditionally show Header */}
       {!hideLayout && <Header />}
 
-      <main className="mt-14">
+      <main className="">
         <Routes>
           <Route
             path="/"
