@@ -65,7 +65,7 @@ const ContactUs = () => {
               <FaEnvelope className="text-cyan-500 text-xl mt-1" />
               <div>
                 <h4 className="font-semibold text-white">Email</h4>
-                <p className="text-gray-400">support@cryptoinvest.com</p>
+                <p className="text-gray-400">support@zentravault.us</p>
               </div>
             </div>
           </div>
