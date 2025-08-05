@@ -12,6 +12,7 @@ import Plans from './components/Plans';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonial';
 import Loader from './components/Loader';
+import TranslateBar from './components/TranslateBar';
 
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -45,44 +46,51 @@ const AppLayout = () => {
     setLoading(true);
     const timeout = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timeout);
-  }, [location.pathname]); // <-- triggers on every route change
+  }, [location.pathname]);
 
   if (loading) return <Loader />;
 
   return (
     <>
+      {/* Show TranslateBar on all pages */}
+      <TranslateBar />
+
+      {/* Conditionally show Header */}
       {!hideLayout && <Header />}
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Carousel />
-              <CoinSlider />
-              <WhatWeOffer />
-              <Plans />
-              <WhyChooseUs />
-              <Testimonials />
-            </>
-          }
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/plans" element={<Plans />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/reset-password/:token" element={<ResetPassword />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/userdashboard" element={<UserDashboard />} />
-        <Route path="/admindashboard" element={<AdminDashboard />} />
-        <Route path="/withdraw" element={<WithdrawalForm />} />
-        <Route path="/deposit" element={<DepositForm />} />
-        <Route path="/invest" element={<InvestForm />} />
-        <Route path="/investment" element={<InvestmentPlan />} />
-        <Route path="/confirmpayment" element={<ConfirmPayment />} />
-      </Routes>
+      <main className="mt-14">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Carousel />
+                <CoinSlider />
+                <WhatWeOffer />
+                <Plans />
+                <WhyChooseUs />
+                <Testimonials />
+              </>
+            }
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/plans" element={<Plans />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/userdashboard" element={<UserDashboard />} />
+          <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/withdraw" element={<WithdrawalForm />} />
+          <Route path="/deposit" element={<DepositForm />} />
+          <Route path="/invest" element={<InvestForm />} />
+          <Route path="/investment" element={<InvestmentPlan />} />
+          <Route path="/confirmpayment" element={<ConfirmPayment />} />
+        </Routes>
+      </main>
 
+      {/* Conditionally show Footer */}
       {!hideLayout && <Footer />}
 
       <ToastContainer
