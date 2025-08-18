@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // ✅ import useNavigate
 import { toast } from 'react-toastify';
 
 const InvestForm = () => {
@@ -7,6 +8,7 @@ const InvestForm = () => {
   const [amount, setAmount] = useState('');
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem('token');
+  const navigate = useNavigate(); // ✅ initialize navigate
 
   useEffect(() => {
     fetchPlans();
@@ -50,6 +52,7 @@ const InvestForm = () => {
       toast.success('Investment created successfully');
       setAmount('');
       setSelectedPlanId('');
+      navigate('/userdashboard'); // ✅ redirect to user dashboard
     } catch (err) {
       toast.error('Something went wrong');
     } finally {
@@ -72,7 +75,7 @@ const InvestForm = () => {
             <option value="" className="text-gray-500">-- Choose a Plan --</option>
             {plans.map((plan) => (
               <option key={plan.id} value={plan.id}>
-                {plan.name} (${plan.minAmount} - {plan.maxAmount ?? '∞'}) | {plan.dailyReturn * 100}% daily
+                {plan.name} (${plan.minAmount} - {plan.maxAmount ?? '∞'}) | {(plan.dailyReturn * 100).toFixed(2)}% daily
               </option>
             ))}
           </select>

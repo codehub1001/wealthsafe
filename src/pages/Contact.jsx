@@ -48,7 +48,7 @@ const ContactUs = () => {
               <div>
                 <h4 className="font-semibold text-white">Office Address</h4>
                 <p className="text-gray-400">
-                  zentravault Inc.
+                  Wealth Safe Gain Inc.
                   85 Broad Street, 28th Floor
                   New York, NY 10004
                   United States

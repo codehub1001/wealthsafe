@@ -4,40 +4,40 @@ import { useNavigate } from 'react-router-dom';
 
 const plans = [
   {
-    name: 'Bronze',
-    price: '$100 - $499',
-    returns: '10% daily return',
-    duration : '7days',
-    perks: ['Low Risk', , 'Beginner Friendly'],
-    color: 'from-amber-400 to-amber-600',
-    glow: 'shadow-amber-300',
+    name: 'Starter',
+    price: '$200',
+    returns: 'Earn $500',
+    duration: '48 Hours',
+    perks: ['Quick Return', 'Beginner Friendly'],
+    color: 'from-green-400 to-green-600',
+    glow: 'shadow-green-300',
   },
   {
-    name: 'Silver',
-    price: '$500 - $999',
-    returns: '15% daily Return',
-    duration : '10days',
-    perks: ['Moderate Risk', 'Faster Growth', 'Priority Support'],
-    color: 'from-gray-400 to-gray-600',
-    glow: 'shadow-gray-300',
+    name: 'Basic',
+    price: '$1,000',
+    returns: 'Earn $3,000',
+    duration: '72 Hours',
+    perks: ['High ROI', 'Fast Growth'],
+    color: 'from-blue-400 to-blue-600',
+    glow: 'shadow-blue-300',
   },
   {
-    name: 'Gold',
-    price: '$1,000 - $4,999',
-    returns: '18% daily Return',
-     duration : '14days',
-    perks: ['Higher ROI', 'Weekly Analytics', 'Dedicated Advisor'],
-    color: 'from-yellow-400 to-yellow-600',
+    name: 'Pro',
+    price: '$3,000',
+    returns: 'Earn $10,000',
+    duration: '3 Days',
+    perks: ['Bigger Profits', 'Short Duration'],
+    color: 'from-purple-400 to-purple-600',
+    glow: 'shadow-purple-300',
+  },
+  {
+    name: 'Elite',
+    price: '$5,000',
+    returns: 'Earn $25,000',
+    duration: '5 Days',
+    perks: ['Massive Returns', 'VIP Priority'],
+    color: 'from-yellow-500 to-yellow-700',
     glow: 'shadow-yellow-300',
-  },
-  {
-    name: 'Diamond',
-    price: '$5,000+',
-    returns: '22% daily Return',
-     duration : '21 days',
-    perks: ['Elite Returns', 'VIP Access', '1-on-1 Portfolio Review'],
-    color: 'from-blue-500 to-blue-800',
-    glow: 'shadow-blue-400',
   },
 ];
 
@@ -71,7 +71,8 @@ const Plans = () => {
           transition={{ delay: 0.2 }}
           className="text-gray-600 mb-12 max-w-xl mx-auto"
         >
-          No matter where you start, our plans scale with your ambition. Enjoy tailored returns and powerful features for every budget.
+          No matter where you start, our plans scale with your ambition. Enjoy
+          tailored returns and powerful features for every budget.
         </motion.p>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -88,10 +89,16 @@ const Plans = () => {
               <div
                 className={`absolute top-0 left-0 h-1 w-full bg-gradient-to-r ${plan.color}`}
               />
-              <h3 className="text-xl font-bold text-blue-800 mb-2">{plan.name}</h3>
-              <p className="text-lg font-semibold text-gray-800">{plan.price}</p>
-              <p className="text-sm text-blue-700 mb-4">{plan.duration}</p>
-              <p className="text-sm text-blue-700 mb-4">{plan.returns}</p>
+              <h3 className="text-xl font-bold text-blue-800 mb-2">
+                {plan.name}
+              </h3>
+              <p className="text-lg font-semibold text-gray-800">
+                {plan.price}
+              </p>
+              <p className="text-sm text-blue-700 mb-2">{plan.duration}</p>
+              <p className="text-sm text-green-700 font-bold mb-4">
+                {plan.returns}
+              </p>
 
               <ul className="text-sm text-gray-600 mb-4 list-disc list-inside space-y-1">
                 {plan.perks.map((perk, idx) => (

@@ -14,7 +14,7 @@ const AboutUs = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-extrabold mb-4 text-cyan-400 tracking-wide">
-            About Zentra Vault
+            About Wealth Safe Gain
           </h2>
           <p className="text-gray-300 text-lg">
             Building wealth through blockchain for over a decade.

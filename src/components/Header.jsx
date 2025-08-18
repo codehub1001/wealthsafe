@@ -22,16 +22,17 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <img
-            src="/img/zentralogo.png"
-            alt="Zentra Vault"
-            className="w-14 h-14 object-contain transition-transform group-hover:scale-110 duration-300"
-          />
-          <span className="text-2xl font-extrabold text-blue-800 tracking-wide group-hover:text-blue-900 transition-all">
-
-          </span>
+          <div className="p-1.5 bg-blue-100 rounded-full shadow-md transition-transform group-hover:scale-110 duration-300">
+            <img
+              src="/img/wealthsafe.png"
+              alt="WealthSafeGain Logo"
+              className="w-16 h-16 object-contain"
+            />
+          </div>
+          {/* <span className="text-2xl font-extrabold text-blue-800 tracking-wide group-hover:text-blue-900 transition-all">
+            WealthSafeGain
+          </span> */}
         </Link>
-
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-6 animate-fade-in">
@@ -40,9 +41,10 @@ const Header = () => {
               key={link.name}
               to={link.to}
               className={({ isActive }) =>
-                `transition-all duration-200 flex items-center text-sm font-medium gap-1 border-b-2 ${isActive
-                  ? 'border-blue-600 text-blue-700'
-                  : 'border-transparent text-blue-900 hover:border-blue-400 hover:text-blue-500'
+                `transition-all duration-200 flex items-center text-sm font-medium gap-1 border-b-2 ${
+                  isActive
+                    ? 'border-blue-600 text-blue-700'
+                    : 'border-transparent text-blue-900 hover:border-blue-400 hover:text-blue-500'
                 }`
               }
             >
@@ -78,9 +80,10 @@ const Header = () => {
               to={link.to}
               onClick={toggleNav}
               className={({ isActive }) =>
-                `block text-base flex items-center gap-2 rounded-md px-2 py-2 ${isActive
-                  ? 'bg-blue-100 text-blue-700 font-semibold'
-                  : 'text-blue-900 hover:bg-blue-100 hover:text-blue-600'
+                `block text-base flex items-center gap-2 rounded-md px-2 py-2 ${
+                  isActive
+                    ? 'bg-blue-100 text-blue-700 font-semibold'
+                    : 'text-blue-900 hover:bg-blue-100 hover:text-blue-600'
                 } transition duration-200`
               }
             >

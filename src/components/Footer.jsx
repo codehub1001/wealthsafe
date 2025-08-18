@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div>
-          <h3 className="text-2xl font-extrabold mb-3">zentravault</h3>
+          <h3 className="text-2xl font-extrabold mb-3">Wealthsafegain</h3>
           <p className="text-sm text-blue-100 leading-relaxed">
             Empowering your crypto journey with smart, secure, and scalable investment plans.
           </p>
@@ -73,7 +73,7 @@ const Footer = () => {
 
       {/* Divider */}
       <div className="border-t border-blue-800 mt-12 pt-6 text-center text-sm text-blue-200">
-        &copy; {new Date().getFullYear()} zentravault. All rights reserved.
+        &copy; {new Date().getFullYear()} Wealthsafegain. All rights reserved.
       </div>
     </footer>
   );
