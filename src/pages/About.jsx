@@ -32,16 +32,16 @@ const AboutUs = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-white">Who We Are</h3>
             <p className="text-gray-300">
-              CryptoInvest is a pioneering cryptocurrency investment platform founded in 2015. We’ve served thousands of clients globally, offering curated investment strategies backed by data, experience, and blockchain technology. With over 10 years in operation, we remain leaders in the crypto space.
+              Wealthsafegain is a pioneering cryptocurrency investment platform founded in 2015. We’ve served thousands of clients globally, offering curated investment strategies backed by data, experience, and blockchain technology. With over 10 years in operation, we remain leaders in the crypto space.
             </p>
             <p className="text-gray-300">
-              Our services range from portfolio management and staking to AI-based trading insights and education. CryptoInvest believes in equal access to the digital economy and ensures every investor — big or small — can grow securely.
+              Our services range from portfolio management and staking to AI-based trading insights and education. Wealthsafegain  believes in equal access to the digital economy and ensures every investor — big or small — can grow securely.
             </p>
           </div>
           <div className="flex items-center justify-center">
             <img
               src="/images/team-crypto.jpg"
-              alt="CryptoInvest Team"
+              alt="Wealthsafegain  Team"
               className="rounded-lg shadow-xl w-full max-w-md"
             />
           </div>
