@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { FaBitcoin, FaEthereum, FaRegCopy } from 'react-icons/fa';
-import { SiLitecoin } from 'react-icons/si';
+import { FaBitcoin, FaRegCopy } from 'react-icons/fa';
+import { SiTether } from 'react-icons/si';
 
 const walletAddresses = {
-  BTC: 'bc1q2tx3npt7v6csrvsxf74cq66q2tt57z88cenqkj',
-  ETH: '0x1E8c5260B39069A36F5588f928cA2a0CfC0D118e',
-  LTC: 'LSUjdeBaXwxaMq3462Svd1FZDmbzvnnjFx',
+  BTC: 'bc1qkfguepjc8dymuhkajpx7jxvl8tp8kg88x2d8ar',
+  USDT: '0xfca17919aF9C8Af69e87D08921A471A4AE15D34B', // TRC20 wallet
 };
 
 const coinIcons = {
   BTC: <FaBitcoin className="text-yellow-400 inline mr-2" />,
-  ETH: <FaEthereum className="text-purple-400 inline mr-2" />,
-  LTC: <SiLitecoin className="text-gray-400 inline mr-2" />,
+  USDT: <SiTether className="text-green-400 inline mr-2" />,
 };
 
 const DepositForm = () => {
@@ -21,7 +19,7 @@ const DepositForm = () => {
   const [coin, setCoin] = useState('BTC');
   const [usdAmount, setUsdAmount] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [liveRates, setLiveRates] = useState({ BTC: 0, ETH: 0, LTC: 0 });
+  const [liveRates, setLiveRates] = useState({ BTC: 0, USDT: 1 });
   const [convertedAmount, setConvertedAmount] = useState('');
 
   useEffect(() => {
@@ -33,9 +31,10 @@ const DepositForm = () => {
       return json.RAW?.PRICE || 0;
     };
 
-    Promise.all([fetchRate('BTC'), fetchRate('ETH'), fetchRate('LTC')])
-      .then(([btc, eth, ltc]) => setLiveRates({ BTC: btc, ETH: eth, LTC: ltc }))
-      .catch(() => toast.error('Failed to fetch live rates'));
+    // BTC live, USDT always ~1
+    fetchRate('BTC')
+      .then((btc) => setLiveRates({ BTC: btc, USDT: 1 }))
+      .catch(() => toast.error('Failed to fetch BTC rate'));
   }, []);
 
   useEffect(() => {
@@ -92,8 +91,7 @@ const DepositForm = () => {
             <label className="block text-sm text-gray-400 mb-1">Choose Coin</label>
             <select value={coin} onChange={(e) => setCoin(e.target.value)} className="w-full px-3 py-2 bg-gray-700 rounded border border-gray-600 text-white">
               <option value="BTC">Bitcoin (BTC)</option>
-              <option value="ETH">Ethereum (ETH)</option>
-              <option value="LTC">Litecoin (LTC)</option>
+              <option value="USDT">Tether USDT (TRC20)</option>
             </select>
           </div>
 
