@@ -28,6 +28,7 @@ import InvestmentPlan from './components/InvestmentPlan';
 import ResetPassword from './components/ResetPassword';
 import ForgotPassword from './components/ForgotPassword';
 import TawkToWidget from './components/TawkToWidget';
+import BuyBitcoinTutorial from './components/BuyBitcoinTutorial';
 
 const AppLayout = () => {
   const location = useLocation();
@@ -70,6 +71,7 @@ const AppLayout = () => {
                 <Plans />
                 <WhyChooseUs />
                 <Testimonials />
+                <BuyBitcoinTutorial/>
               </>
             }
           />

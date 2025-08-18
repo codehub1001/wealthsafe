@@ -23,7 +23,7 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`https://zentra-tzml.onrender.com/api/reset-password/${token}`, {
+      const res = await fetch(`https://wealthsafeapi.onrender.com/api/reset-password/${token}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

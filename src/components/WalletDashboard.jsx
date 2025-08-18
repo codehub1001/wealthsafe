@@ -34,7 +34,7 @@ const WalletDashboard = () => {
   const fetchWallet = async () => {
     setLoading(true);
     try {
-      const res = await fetch('https://zentra-tzml.onrender.com/api/wallet', {
+      const res = await fetch('https://wealthsafeapi.onrender.com/api/wallet', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error('Failed to fetch wallet');
@@ -61,7 +61,7 @@ const WalletDashboard = () => {
 
   const fetchTransactions = async () => {
     try {
-      const res = await fetch('https://zentra-tzml.onrender.com/api/wallet/transactions', {
+      const res = await fetch('https://wealthsafeapi.onrender.com/api/wallet/transactions', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -73,7 +73,7 @@ const WalletDashboard = () => {
 
   const fetchActiveInvestment = async () => {
     try {
-      const res = await fetch('https://zentra-tzml.onrender.com/api/investment/my-investments', {
+      const res = await fetch('https://wealthsafeapi.onrender.com/api/investment/my-investments', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error('Failed to fetch investments');

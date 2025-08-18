@@ -63,7 +63,7 @@ const UserDashboard = () => {
       if (!token) return setError('Token missing. Please log in again.');
 
       try {
-        const res = await fetch('https://zentra-tzml.onrender.com/api/profile', {
+        const res = await fetch('https://wealthsafeapi.onrender.com/api/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -87,7 +87,7 @@ const UserDashboard = () => {
         dob: form.dob ? new Date(form.dob).toISOString() : null,
       };
 
-      const res = await fetch('https://zentra-tzml.onrender.com/api/profile', {
+      const res = await fetch('https://wealthsafeapi.onrender.com/api/profile', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

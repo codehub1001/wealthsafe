@@ -11,7 +11,7 @@ const InvestmentPlans = () => {
 
   const fetchPlans = async () => {
     try {
-      const res = await fetch('https://zentra-tzml.onrender.com/api/investments/plans', {
+      const res = await fetch('https://wealthsafeapi.onrender.com/api/investments/plans', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -26,7 +26,7 @@ const InvestmentPlans = () => {
     if (!amount || isNaN(amount)) return toast.error('Invalid amount');
 
     try {
-      const res = await fetch('https://zentra-tzml.onrender.com/api/investments/invest', {
+      const res = await fetch('https://wealthsafeapi.onrender.com/api/investments/invest', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

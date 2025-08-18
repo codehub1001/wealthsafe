@@ -10,7 +10,7 @@ const ReferralSummaryCard = () => {
   useEffect(() => {
     const fetchReferralSummary = async () => {
       try {
-        const res = await fetch('https://zentra-tzml.onrender.com/api/referrals', {
+        const res = await fetch('https://wealthsafeapi.onrender.com/api/referrals', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
