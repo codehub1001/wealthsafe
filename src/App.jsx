@@ -29,6 +29,7 @@ import ResetPassword from './components/ResetPassword';
 import ForgotPassword from './components/ForgotPassword';
 import TawkToWidget from './components/TawkToWidget';
 import BuyBitcoinTutorial from './components/BuyBitcoinTutorial';
+import LiveNotifications from './components/LiveNotifications';
 
 const AppLayout = () => {
   const location = useLocation();
@@ -56,6 +57,7 @@ const AppLayout = () => {
     <>
       {/* Show TranslateBar on all pages */}
       <TawkToWidget/>
+      <LiveNotifications/>
       {/* Conditionally show Header */}
       {!hideLayout && <Header />}
 
