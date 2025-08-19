@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Example notifications (you’ll replace with real API/WebSocket data)
 const sampleEvents = [
-  { name: "John D.", country: "USA", action: "deposited", amount: "$250" },
-  { name: "Fatima K.", country: "Dubai", action: "withdrew", amount: "$120" },
-  { name: "Luis P.", country: "Brazil", action: "deposited", amount: "$500" },
+  { name: "John D.", country: "USA", action: "deposited", amount: "$2500" },
+  { name: "Fatima K.", country: "Dubai", action: "withdrew", amount: "$1200" },
+  { name: "Luis P.", country: "Brazil", action: "deposited", amount: "$15,000" },
   { name: "Chen W.", country: "China", action: "withdrew", amount: "$300" },
-  { name: "james", country: "USA", action: "withdrew", amount: "$3000" },
+  { name: "james", country: "USA", action: "withdrew", amount: "$45,000" },
   { name: "mary", country: "Canada", action: "withdrew", amount: "$200" },
 ];
 
