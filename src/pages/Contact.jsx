@@ -60,7 +60,7 @@ const ContactUs = () => {
               <FaPhoneAlt className="text-cyan-500 text-xl mt-1" />
               <div>
                 <h4 className="font-semibold text-white">Phone</h4>
-                <p className="text-gray-400">+234 700-</p>
+                <p className="text-gray-400">+1 ---</p>
               </div>
             </div>
 
