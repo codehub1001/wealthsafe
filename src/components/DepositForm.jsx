@@ -6,7 +6,7 @@ import { SiTether } from 'react-icons/si';
 
 const walletAddresses = {
   BTC: 'bc1qkfguepjc8dymuhkajpx7jxvl8tp8kg88x2d8ar',
-  USDT: '0xfca17919aF9C8Af69e87D08921A471A4AE15D34B', // TRC20 wallet
+  USDT: 'TYoxhs1MwnoTH29JAb8bNZ2JxNTGYL8pfU', // TRC20 wallet
 };
 
 const coinIcons = {
