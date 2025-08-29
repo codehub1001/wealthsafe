@@ -56,13 +56,13 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            {/* <div className="flex items-start gap-4">
               <FaPhoneAlt className="text-cyan-500 text-xl mt-1" />
               <div>
                 <h4 className="font-semibold text-white">Phone</h4>
                 <p className="text-gray-400"></p>
-              </div>
-            </div>
+              </div> 
+            </div> */}
 
             <div className="flex items-start gap-4">
               <FaEnvelope className="text-cyan-500 text-xl mt-1" />
