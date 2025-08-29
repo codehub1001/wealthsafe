@@ -60,7 +60,7 @@ const ContactUs = () => {
               <FaPhoneAlt className="text-cyan-500 text-xl mt-1" />
               <div>
                 <h4 className="font-semibold text-white">Phone</h4>
-                <p className="text-gray-400">+1 ---</p>
+                <p className="text-gray-400"></p>
               </div>
             </div>
 
@@ -68,7 +68,7 @@ const ContactUs = () => {
               <FaEnvelope className="text-cyan-500 text-xl mt-1" />
               <div>
                 <h4 className="font-semibold text-white">Email</h4>
-                <p className="text-gray-400">support@wealthsafegain.com</p>
+                <p className="text-gray-400">wealthsafegain@gmail.com</p>
               </div>
             </div>
           </div>
